@@ -28,9 +28,28 @@ subject_data <- rbind(test_subject_data, train_subject_data)
 colnames(subject_data) <- c("subject")
 
 #load the list of variables, attach as col names, and filter the cols
-col_names <- read.table(column_names_file, stringsAsFactors=F)
+col_names <- read.table(column_names_file, stringsAsFactors=FALSE)
 colnames(col_names) <- c("id", "name")
-colnames(x_data) <- col_names$name
+
+#Need to do some cleanup here, there are duplicate column names
+# This seems a messy way to do it...
+c1 <- col_names$name[1:302]
+c2 <- paste(col_names$name[303:316],rep("-X",14))
+c3 <- paste(col_names$name[317:330],rep("-Y",14))
+c4 <- paste(col_names$name[331:344],rep("-Z",14))
+c5 <- col_names$name[345:380]
+c6 <- paste(col_names$name[381:395],rep("-X",14))
+c7 <- paste(col_names$name[396:409],rep("-Y",14))
+c8 <- paste(col_names$name[410:423],rep("-Z",14))
+c9 <- col_names$name[424:460]
+c10 <- paste(col_names$name[461:474],rep("-X",14))
+c11 <- paste(col_names$name[475:488],rep("-Y",14))
+c12 <- paste(col_names$name[489:502],rep("-Z",14))
+c13 <- col_names$name[503:561]
+new_col_names <- c(c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13)
+
+#Update the column names in the 
+colnames(x_data) <- new_col_names
 mean_cols <- grep("mean|std", colnames(x_data), ignore.case=TRUE)
 x_filtered <- x_data[,mean_cols]
 
@@ -62,7 +81,8 @@ write.table(final_data, "final_data1.txt")
 # (not just the mean/std cols that were filtered above)
 full_data <- cbind(subject_data, activity, x_data)
 
-install.packages("reshape2")
+#uncomment if you get errors
+#install.packages("reshape2")
 library(reshape2)
 
 mymelt <- melt(full_data, id=c("subject", "activity"))
