@@ -33,6 +33,7 @@ colnames(col_names) <- c("id", "name")
 
 #Need to do some cleanup here, there are duplicate column names
 # This seems a messy way to do it...
+# See my codebook for discussion on this
 c1 <- col_names$name[1:302]
 c2 <- paste(col_names$name[303:316],rep("-X",14))
 c3 <- paste(col_names$name[317:330],rep("-Y",14))
