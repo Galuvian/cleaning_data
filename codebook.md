@@ -10,7 +10,9 @@ Since there are 3 sets of repeated columns for each variable (fBodyAcc, fBodyAcc
 -X, -Y, and -Z somehow got left off of thes ecolumn names in the raw data.
 
 So the script modifies the column names to append -X, -Y, or -Z to the necessary values.
-```303-316 Add -X
+
+```
+303-316 Add -X
 317-330 Add -Y
 331-344 Add -Z
 
