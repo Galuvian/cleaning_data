@@ -26,12 +26,12 @@ Files included:
 |README.txt| Readme that accompanies the dataset |
 |run_analysis.R| My script for this assignment |
 |subject-activity-mean.txt| Results for the second part of the assginment|
-|test| Directory with test data |
+|test/| Directory with test data |
 |test/Inertial Signals| Contains raw sensor data files, not used for this assginment|
 |test/subject_test.txt| Data file containing a subject id for each record in the other data files|
 |test/X_test.txt| "X" data file, which contains the summarized sensor data for each measured activity|
 |test/y_test.txt| "Y" data file, which contains the activity for each measurement in the "X" file |
-|train| Training dataset |
+|train/| Training dataset |
 |train/Inertial Signals| Contains raw sensor data files, not used for this assginment |
 |train/subject_train.txt| Data file containing a subject id for each record in the other data files|
 |train/X_train.txt|  "X" data file, which contains the summarized sensor data for each measured activity|
